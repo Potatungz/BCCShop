@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "346103764144",
+    "firebase_url": "https://bccshop-a496b.firebaseio.com",
+    "project_id": "bccshop-a496b",
+    "storage_bucket": "bccshop-a496b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346103764144:android:e675917bdf7b1a0db71775",
+        "android_client_info": {
+          "package_name": "com.bangkokcable.bccshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346103764144-kbqlmgnpnr37p8uhhhgke67qt6cgcrk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWObZ7_MPiTDwVGc1ECP1pddk3wzSqz7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346103764144-kbqlmgnpnr37p8uhhhgke67qt6cgcrk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
