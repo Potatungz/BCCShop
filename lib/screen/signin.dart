@@ -4,6 +4,7 @@ import 'package:bccshop/model/user_model.dart';
 import 'package:bccshop/screen/main_rider.dart';
 import 'package:bccshop/screen/main_shop.dart';
 import 'package:bccshop/screen/main_user.dart';
+import 'package:bccshop/utility/my_const.dart';
 import 'package:bccshop/utility/my_style.dart';
 import 'package:bccshop/utility/normal_dialog.dart';
 import 'package:dio/dio.dart';
@@ -28,9 +29,9 @@ class _SignInState extends State<SignIn> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: <Color>[Colors.white, MyStyle().primaryColor],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomRight),
+              colors: <Color>[Colors.white, MyStyle().lightColor],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter),
         ),
         child: Center(
           child: SingleChildScrollView(
@@ -57,7 +58,7 @@ class _SignInState extends State<SignIn> {
       width: 320.0,
       height: 50.0,
       child: RaisedButton(
-        color: MyStyle().darkColor,
+        color: MyStyle().primaryColor,
         onPressed: () {
           if (user == null ||
               user.isEmpty ||
@@ -76,7 +77,7 @@ class _SignInState extends State<SignIn> {
 
   Future<Null> checkAuthen() async {
     String url =
-        "http://192.168.64.2/BCCShop/getUserWhereUser.php?isAdd=true&User=$user";
+        "${MyConstant().domain}/BCCShop/getUserWhereUser.php?isAdd=true&User=$user";
 
     try {
       Response response = await Dio().get(url);

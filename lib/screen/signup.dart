@@ -1,3 +1,4 @@
+import 'package:bccshop/utility/my_const.dart';
 import 'package:dio/dio.dart';
 
 import 'package:bccshop/utility/my_style.dart';
@@ -72,7 +73,7 @@ class _SignUpState extends State<SignUp> {
       ));
 
       Future<Null> checkUserThread() async{
-        String url = "http://192.168.64.2/BCCShop/getUserWhereUser.php?isAdd=true&User=$user";
+        String url = "${MyConstant().domain}/BCCShop/getUserWhereUser.php?isAdd=true&User=$user";
 
         try {
           Response response = await Dio().get(url);
@@ -88,7 +89,7 @@ class _SignUpState extends State<SignUp> {
       }
 
       Future<Null> registerThread()async{
-        String url = "http://192.168.64.2/BCCShop/addUser.php?isAdd=true&Name=$name&User=$user&Password=$password&ChooseType=$chooseType";
+        String url = "${MyConstant().domain}/BCCShop/addUser.php?isAdd=true&Name=$name&User=$user&Password=$password&ChooseType=$chooseType";
 
         // หากเสี่ยงต่อการ error ให้ทำการใช้ฟังก์ชั่น try ครอบไว้ก่อน
         try {

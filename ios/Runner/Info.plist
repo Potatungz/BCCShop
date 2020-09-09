@@ -41,5 +41,24 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    
+    <key>io.flutter.embedded_views_preview</key>
+    <true/>
+    
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app require access to your location for BCCShop</string>
+        
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app require access to your location for BCCShop</string>
+    
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app require photo for upload to server</string>
+    
+    <key>NSCameraUsageDescription</key>
+    <string>This app require camera for upload to server</string>
+    
+    <key>NSMicrophoneUsageDescription</key>
+    <string>This app require microphone for upload to server</string>
+    
 </dict>
 </plist>

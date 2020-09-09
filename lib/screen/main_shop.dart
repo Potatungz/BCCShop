@@ -11,7 +11,6 @@ class MainShop extends StatefulWidget {
 }
 
 class _MainShopState extends State<MainShop> {
-
   // Field
   Widget currentWidget = OrderListShop();
   @override
@@ -25,7 +24,8 @@ class _MainShopState extends State<MainShop> {
               onPressed: () => signOutProcess(context))
         ],
       ),
-      drawer: showDrawer(), body: currentWidget,
+      drawer: showDrawer(),
+      body: currentWidget,
     );
   }
 
@@ -73,7 +73,7 @@ class _MainShopState extends State<MainShop> {
           setState(() {
             currentWidget = InfomationShop();
           });
-         Navigator.pop(context);
+          Navigator.pop(context);
         },
       );
 

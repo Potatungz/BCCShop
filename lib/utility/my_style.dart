@@ -3,8 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class MyStyle {
-  Color darkColor = Colors.blue.shade900;
-  Color primaryColor = Colors.green.shade300;
+  Color darkColor = Colors.blueGrey;
+  Color lightColor = Colors.blue.shade100;
+  Color primaryColor = Colors.blue.shade900;
+
+  Widget showProgress(){
+    return Center(child: CircularProgressIndicator(),);
+  }
 
   SizedBox mySizeBox() => SizedBox(
         width: 8.0,
@@ -35,10 +40,11 @@ class MyStyle {
     );
   }
 
+
   Text showTitle(String title) => Text(
         title,
         style: TextStyle(
-          fontSize: 28,
+          fontSize: 28.0,
           color: Colors.blue.shade900,
           fontWeight: FontWeight.bold,
         ),
@@ -47,10 +53,28 @@ class MyStyle {
   Text showTitleH2(String title) => Text(
         title,
         style: TextStyle(
-          fontSize: 16,
+          fontSize: 16.0,
           color: Colors.blue.shade900,
           fontWeight: FontWeight.bold,
         ),
+      );
+
+      TextStyle mainTitle = TextStyle(
+        fontSize: 16.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.blueGrey.shade900,
+      );
+
+      TextStyle mainH2Title = TextStyle(
+        fontSize: 22.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.red,
+      );
+
+       TextStyle mainH3Title = TextStyle(
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
+        color: Colors.blueGrey.shade900,
       );
 
   MyStyle();
