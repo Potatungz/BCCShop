@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bccshop/model/user_model.dart';
+import 'package:bccshop/screen/show_cart.dart';
 import 'package:bccshop/screen/show_shop_product_menu.dart';
 import 'package:bccshop/utility/my_const.dart';
 import 'package:bccshop/utility/my_style.dart';
@@ -25,7 +26,6 @@ class _MainUserState extends State<MainUser> {
     super.initState();
     currentWidget = ShowListShopAll();
     findUser();
-
   }
 
   // เรียกดึงค่า SharedPreferences มาใช้งานในหน้าต่างๆ
@@ -42,6 +42,7 @@ class _MainUserState extends State<MainUser> {
       appBar: AppBar(
         title: Text(nameUser == null ? "Main User " : "$nameUser login"),
         actions: <Widget>[
+          MyStyle().iconShowCart(context),
           IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: () => signOutProcess(context))
@@ -60,6 +61,7 @@ class _MainUserState extends State<MainUser> {
               children: <Widget>[
                 showHead(),
                 menuListShop(),
+                menuCart(),
                 menuStatusOrder(),
               ],
             ),
@@ -87,7 +89,7 @@ class _MainUserState extends State<MainUser> {
     );
   }
 
-   ListTile menuStatusOrder() {
+  ListTile menuStatusOrder() {
     return ListTile(
       leading: Icon(Icons.format_list_numbered),
       title: Text("แสดงรายการสินค้าที่สั่ง"),
@@ -122,7 +124,6 @@ class _MainUserState extends State<MainUser> {
     );
   }
 
-
   UserAccountsDrawerHeader showHead() {
     return UserAccountsDrawerHeader(
       decoration: MyStyle().myBoxdecoration("user.jpg"),
@@ -135,6 +136,21 @@ class _MainUserState extends State<MainUser> {
         "Login",
         style: TextStyle(color: MyStyle().primaryColor),
       ),
+    );
+  }
+
+  Widget menuCart() {
+    return ListTile(
+      leading: Icon(Icons.add_shopping_cart),
+      title: Text("ตะกร้าของฉัน"),
+      subtitle: Text("รายการสินค้าที่อยู่ในตะกร้าที่ยังไมไ่ด้สั่งซื้อ"),
+      onTap: () {
+        Navigator.pop(context);
+        MaterialPageRoute route = MaterialPageRoute(
+          builder: (context) => ShowCart(),
+        );
+        Navigator.push(context, route);
+      },
     );
   }
 }

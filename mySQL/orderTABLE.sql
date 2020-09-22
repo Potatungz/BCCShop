@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 24, 2020 at 06:35 AM
+-- Generation Time: Sep 22, 2020 at 09:10 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -24,38 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userTABLE`
+-- Table structure for table `orderTABLE`
 --
 
-CREATE TABLE `userTABLE` (
+CREATE TABLE `orderTABLE` (
   `id` int(11) NOT NULL,
-  `ChooseType` text COLLATE utf8_unicode_ci NOT NULL,
-  `Name` text COLLATE utf8_unicode_ci NOT NULL,
-  `User` text COLLATE utf8_unicode_ci NOT NULL,
-  `Password` text COLLATE utf8_unicode_ci NOT NULL
+  `OrderDateTime` text COLLATE utf8_unicode_ci NOT NULL,
+  `idShop` text COLLATE utf8_unicode_ci NOT NULL,
+  `NameShop` text COLLATE utf8_unicode_ci NOT NULL,
+  `Distance` text COLLATE utf8_unicode_ci NOT NULL,
+  `Transport` text COLLATE utf8_unicode_ci NOT NULL,
+  `idProduct` text COLLATE utf8_unicode_ci NOT NULL,
+  `NameProduct` text COLLATE utf8_unicode_ci NOT NULL,
+  `Price` text COLLATE utf8_unicode_ci NOT NULL,
+  `Amount` text COLLATE utf8_unicode_ci NOT NULL,
+  `Sum` text COLLATE utf8_unicode_ci NOT NULL,
+  `idRider` text COLLATE utf8_unicode_ci NOT NULL,
+  `Status` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `userTABLE`
---
-
-INSERT INTO `userTABLE` (`id`, `ChooseType`, `Name`, `User`, `Password`) VALUES
-(1, 'User', 'ณเดช คุ๊กกี้มั้ยจ๊ะ', 'user1', '1234'),
-(2, 'User', 'TestName2', 'user2', '1234'),
-(3, 'chooseType', 'name', 'user', 'password'),
-(4, 'User', 'flutter1', 'f1', '1234'),
-(5, 'Shop', 'flutter2', 'f2', '1234'),
-(6, 'Shop', 'Test1234', 'user9', '12344'),
-(7, 'Rider', 'Tu', 'User3', '1234');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `userTABLE`
+-- Indexes for table `orderTABLE`
 --
-ALTER TABLE `userTABLE`
+ALTER TABLE `orderTABLE`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -63,10 +58,10 @@ ALTER TABLE `userTABLE`
 --
 
 --
--- AUTO_INCREMENT for table `userTABLE`
+-- AUTO_INCREMENT for table `orderTABLE`
 --
-ALTER TABLE `userTABLE`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `orderTABLE`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

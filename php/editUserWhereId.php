@@ -17,15 +17,20 @@ if (!$link->set_charset("utf8")) {
     exit();
 	}
 
+
 if (isset($_GET)) {
 	if ($_GET['isAdd'] == 'true') {
-				
-		$Name = $_GET['Name'];
-		$User = $_GET['User'];
-		$Password = $_GET['Password'];
-		$ChooseType = $_GET['ChooseType'];
+			
+		$id = $_GET['id'];		
+		$NameShop = $_GET['NameShop'];
+		$Address = $_GET['Address'];
+		$Phone = $_GET['Phone'];
+		$URLImage = $_GET['URLImage'];
+		$Lat = $_GET['Lat'];
+		$Lng = $_GET['Lng'];
+		
 							
-		$sql = "INSERT INTO `userTABLE`(`id`, `ChooseType`, `Name`, `User`, `Password`) VALUES (Null, '$ChooseType', '$Name','$User','$Password')";
+		$sql = "UPDATE `userTABLE` SET `NameShop` = '$NameShop', `Address` = '$Address', `Phone` = '$Phone', `URLImage` = '$URLImage', `Lat` = '$Lat', `Lng` = '$Lng' WHERE id = '$id'";
 
 		$result = mysqli_query($link, $sql);
 
@@ -38,5 +43,6 @@ if (isset($_GET)) {
 	} else echo "Welcome Master UNG";
    
 }
+
 	mysqli_close($link);
 ?>

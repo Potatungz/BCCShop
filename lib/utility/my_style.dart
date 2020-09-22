@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:bccshop/screen/show_cart.dart';
 import 'package:flutter/material.dart';
 
 class MyStyle {
@@ -7,8 +8,21 @@ class MyStyle {
   Color lightColor = Colors.blue.shade100;
   Color primaryColor = Colors.blue.shade900;
 
-  Widget showProgress(){
-    return Center(child: CircularProgressIndicator(),);
+  Widget iconShowCart(BuildContext context) {
+    return IconButton(
+        icon: Icon(Icons.add_shopping_cart),
+        onPressed: () {
+          MaterialPageRoute route = MaterialPageRoute(
+            builder: (context) => ShowCart(),
+          );
+          Navigator.push(context, route);
+        });
+  }
+
+  Widget showProgress() {
+    return Center(
+      child: CircularProgressIndicator(),
+    );
   }
 
   SizedBox mySizeBox() => SizedBox(
@@ -31,7 +45,8 @@ class MyStyle {
 
   Widget titleCenter(BuildContext context, String string) {
     return Center(
-      child: Container(width: MediaQuery.of(context).size.width*0.5,
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.5,
         child: Text(
           string,
           style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
@@ -39,7 +54,6 @@ class MyStyle {
       ),
     );
   }
-
 
   Text showTitle(String title) => Text(
         title,
@@ -59,23 +73,41 @@ class MyStyle {
         ),
       );
 
-      TextStyle mainTitle = TextStyle(
-        fontSize: 16.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.blueGrey.shade900,
+  Text showTitleH3(String title) => Text(
+        title,
+        style: TextStyle(
+          fontSize: 14.0,
+          color: Colors.blue.shade400,
+          fontWeight: FontWeight.bold,
+        ),
       );
 
-      TextStyle mainH2Title = TextStyle(
-        fontSize: 22.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.red,
+      Text showTitleH3Red(String title) => Text(
+        title,
+        style: TextStyle(
+          fontSize: 14.0,
+          color: Colors.red,
+          fontWeight: FontWeight.bold,
+        ),
       );
 
-       TextStyle mainH3Title = TextStyle(
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-        color: Colors.blueGrey.shade900,
-      );
+  TextStyle mainTitle = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.blueGrey.shade900,
+  );
+
+  TextStyle mainH2Title = TextStyle(
+    fontSize: 22.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.red,
+  );
+
+  TextStyle mainH3Title = TextStyle(
+    fontSize: 12.0,
+    fontWeight: FontWeight.normal,
+    color: Colors.blueGrey.shade900,
+  );
 
   MyStyle();
 }
